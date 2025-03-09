@@ -2,15 +2,20 @@
 // 2. If any element is greater than the next, return false.
 // 3. If the loop completes, return true.
 
-function isSorted(A){
-    let n = A.lenght;
-    for(let i=0; i<n; i++){
-        console.log(A[i])
-    }
 
+function sortArray(arr) {
+    for(let i=0; i < arr.length; i++){
+        for(j=i+1; j<arr.length; j++){
+            if(arr[i] > arr[j]){
+                [arr[i],arr[j]] = [arr[j],arr[i]]
+            }
+        }
+    }
+    console.log(arr)
 }
 
-let arr = [1, 2, 5, 4, 4,7]
+// Example usage
+let numbers = [5, 3, 8, 4, 2];
+sortArray(numbers); // Output: [2, 3, 4, 5, 8]
 
-isSorted(arr)
 

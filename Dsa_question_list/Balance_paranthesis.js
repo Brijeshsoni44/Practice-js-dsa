@@ -23,7 +23,7 @@ for(let i=0; i<n; i++){
 
 }
 return stk.length === 0;
-    
+
 }
 
 let s = "[()]{}{[()()]()}";

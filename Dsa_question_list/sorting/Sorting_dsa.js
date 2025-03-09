@@ -27,11 +27,10 @@ const data = {
 // console.log(result)
 
 // 4. Find the employee with the highest salary.
-const result = data.employees.sort((a,b) => b.salary-a.salary)[0]
+// const result = data.employees.sort((a,b) => b.salary-a.salary)[0]
 // explain==> sort the salary in ascending order and get the last element of the array
 // explain==> sort the salary in descending order and get the first element of the array
-
-console.log(result)
+// console.log(result)
 
 
 // 8. Add a new key isSenior to each employee, marking employees older than 30 as true.
