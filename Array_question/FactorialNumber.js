@@ -6,3 +6,17 @@ function factorials(n){
 
 }
 console.log(factorials(5))
+
+
+function factorial(a){
+    let result = 1;
+   for(let i=a; i>0; i--){
+    result *=  i;
+
+   }
+   console.log(result)
+
+}
+
+
+factorial(10)

@@ -1,6 +1,6 @@
 function isAnagram(str1,str2){
 let map1 = {};
-let map2 = {}
+let map2 = {};
 if(str1.length !== str2.length){
     return false
 }

@@ -26,6 +26,17 @@
 // reverseWord(words)
 
 
+// Algorithm (Step-by-Step)
+// Initialize an empty list (words[]) to store words.
+// Traverse the input string:
+// If the character is not a space, add it to currentWord.
+// If a space is found, push currentWord to words[] and reset currentWord.
+// Push the last word if not empty.
+// Reverse the words[] and construct the final string.
+// Return the reversed sentence.
+
+
+
 
 function reverseWord(words) {
     let currentWord = '';

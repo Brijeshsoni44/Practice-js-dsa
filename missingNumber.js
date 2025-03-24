@@ -54,7 +54,7 @@ function findMissingNumber(arr) {
 }
 
 // Example usage
-let numbers = [20, 21, 22, 24];
+let numbers = [546, 547, 548, 550];
 findMissingNumber(numbers); // Output: Missing number: 23
 
 

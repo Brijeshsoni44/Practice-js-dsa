@@ -45,3 +45,31 @@ function longestWord(words) {
  let word = "Try programiz pro";
  longestWord(word);
  
+
+
+
+ function longestWord(str) {
+    let longest = '';
+    let currentWord = '';
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== ' ') {  // Build the current word
+            currentWord += str[i];
+        } else {
+            if (currentWord.length > longest.length) {
+                longest = currentWord;
+            }
+            currentWord = '';  // Reset current word
+        }
+    }
+
+    // Check the last word (as it might be the longest)
+    if (currentWord.length > longest.length) {
+        longest = currentWord;
+    }
+
+    return longest;
+}
+
+let str = 'My name is Brijesh Soni';
+console.log(longestWord(str)); // Output: "Brijesh"

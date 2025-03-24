@@ -19,30 +19,63 @@
 
 
 
-function balancedParanthesis(str){
-    let stk = []
-    for(let i=0; i<str.length; i++){
-        if(str[i] === '(' || str[i] === '[' || str[i] === '{'){
+// function balancedParanthesis(str){
+//     let stk = []
+//     for(let i=0; i<str.length; i++){
+//         if(str[i] === '(' || str[i] === '[' || str[i] === '{'){
 
-            stk.push(str[i])
-        }else{
-            if(stk.length > 0  && ((stk[stk.length-1] === '(' && str[i] === ')' ) || (stk[stk.length-1] === '{' && str[i] === '}') || (stk[stk.length-1] === '[' && str[i] === ']' ))){
-                stk.pop()
-            }else{
-                return false;
+//             stk.push(str[i])
+//         }else{
+//             if(stk.length > 0  && ((stk[stk.length-1] === '(' && str[i] === ')' ) || (stk[stk.length-1] === '{' && str[i] === '}') || (stk[stk.length-1] === '[' && str[i] === ']' ))){
+//                 stk.pop()
+//             }else{
+//                 return false;
+//             }
+//         }
+
+//     }
+//     if(stk.length === 0){
+//         return true
+//     }
+
+// }
+
+
+
+
+// let s = "[(])";
+// // Function call
+// console.log(balancedParanthesis(s) ? "true" : "false");
+
+
+
+
+
+
+function balancedParanthesis(s) {
+    let stk = [];
+    let bracketMap = { ')': '(', '}': '{', ']': '[' };
+
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === "(" || s[i] === "[" || s[i] === "{") {
+            stk.push(s[i]); // Push opening brackets
+        } else {
+            if (stk.length === 0 || stk.pop() !== bracketMap[s[i]]) {
+                return false; // Unmatched closing bracket
             }
         }
-
-    }
-    if(stk.length === 0){
-        return true
     }
 
+    return stk.length === 0;
 }
 
+console.log(balancedParanthesis("[{()}]") ? "true" : "false"); // ✅ true
+console.log(balancedParanthesis("[{(})]") ? "true" : "false"); // ❌ false
+console.log(balancedParanthesis("(([]))") ? "true" : "false"); // ✅ true
+console.log(balancedParanthesis("(([]") ? "true" : "false");   // ❌ false
 
 
-
-let s = "[(])";
-// Function call
-console.log(balancedParanthesis(s) ? "true" : "false");
+// Use a stack to handle the Last-In-First-Out (LIFO) nature of brackets.
+// Push open brackets and pop when matched.
+// If a closing bracket doesn’t match, return false.
+// If the stack is empty at the end, return true.
