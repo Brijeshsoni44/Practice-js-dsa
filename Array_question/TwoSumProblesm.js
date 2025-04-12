@@ -14,7 +14,6 @@ function twoSum(arr, sum){
         for(let j=i+1; j<arr.length; j++){
             if(arr[i] + arr[j] === sum){
                 return [i,j]
-
             }
         }
     }
@@ -28,4 +27,4 @@ function twoSum(arr, sum){
 
 
 
-console.log(twoSum([2,7,11,15], 12))
+console.log(twoSum([2,7,11,15], 9))

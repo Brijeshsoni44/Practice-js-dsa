@@ -52,30 +52,59 @@
 
 
 
-function balancedParanthesis(s) {
-    let stk = [];
-    let bracketMap = { ')': '(', '}': '{', ']': '[' };
+// function balancedParanthesis(s) {
+//     let stk = [];
+//     let bracketMap = { ')': '(', '}': '{', ']': '[' };
 
-    for (let i = 0; i < s.length; i++) {
-        if (s[i] === "(" || s[i] === "[" || s[i] === "{") {
-            stk.push(s[i]); // Push opening brackets
-        } else {
-            if (stk.length === 0 || stk.pop() !== bracketMap[s[i]]) {
-                return false; // Unmatched closing bracket
-            }
-        }
-    }
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i] === "(" || s[i] === "[" || s[i] === "{") {
+//             stk.push(s[i]); // Push opening brackets
+//         } else {
+//             if (stk.length === 0 || stk.pop() !== bracketMap[s[i]]) {
+//                 return false; // Unmatched closing bracket
+//             }
+//         }
+//     }
 
-    return stk.length === 0;
-}
+//     return stk.length === 0;
+// }
 
-console.log(balancedParanthesis("[{()}]") ? "true" : "false"); // ✅ true
-console.log(balancedParanthesis("[{(})]") ? "true" : "false"); // ❌ false
-console.log(balancedParanthesis("(([]))") ? "true" : "false"); // ✅ true
-console.log(balancedParanthesis("(([]") ? "true" : "false");   // ❌ false
+// console.log(balancedParanthesis("[{()}]") ? "true" : "false"); // ✅ true
+// console.log(balancedParanthesis("[{(})]") ? "true" : "false"); // ❌ false
+// console.log(balancedParanthesis("(([]))") ? "true" : "false"); // ✅ true
+// console.log(balancedParanthesis("(([]") ? "true" : "false");   // ❌ false
 
 
 // Use a stack to handle the Last-In-First-Out (LIFO) nature of brackets.
 // Push open brackets and pop when matched.
 // If a closing bracket doesn’t match, return false.
 // If the stack is empty at the end, return true.
+
+
+function balancedParenthesis(s) {
+    let stk = [];
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === '(' || s[i] === '{' || s[i] === '[') {
+            stk.push(s[i]);
+        } else {
+            if (stk.length === 0) {
+                return false;
+            }
+            let last = stk[stk.length - 1];
+            if ((last === '(' && s[i] === ')') ||
+                (last === '{' && s[i] === '}') ||
+                (last === '[' && s[i] === ']')) {
+                stk.pop();
+            } else {
+                return false;
+            }
+        }
+    }
+    return stk.length === 0;
+}
+
+// Test cases
+console.log(balancedParenthesis("[(])") ? "true" : "false"); // false
+console.log(balancedParenthesis("{[()]}") ? "true" : "false"); // true
+console.log(balancedParenthesis("{[(])}") ? "true" : "false"); // false
+console.log(balancedParenthesis("()[]{}") ? "true" : "false"); // true
