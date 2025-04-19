@@ -21,7 +21,7 @@ function longestUniqueSubstring(str){
     let maxLength = 0;
     for(let i=0; i<str.length; i++){
         if(map[str[i]] !== 'undefined' && map[str[i]] >= start){
-            start = map[str[i]] + 1
+            start = map[str[i]]  + 1
         }
         map[str[i]] = i
         maxLength = Math.max(maxLength, i - start + 1);
