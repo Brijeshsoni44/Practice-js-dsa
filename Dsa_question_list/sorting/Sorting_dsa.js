@@ -27,7 +27,8 @@ const data = {
 // console.log(result)
 
 // 4. Find the employee with the highest salary.
-// const result = data.employees.sort((a,b) => b.salary-a.salary)[0]
+// const result = data.employees.sort((a,b) => b.salary-a.salary)[0];
+// console.log(result)
 // explain==> sort the salary in ascending order and get the last element of the array
 // explain==> sort the salary in descending order and get the first element of the array
 // console.log(result)
@@ -53,9 +54,9 @@ const data = {
 
 // 10. Count the number of employees in each department.
 
-// const result = data.employees.reduce((counts,item) => {
-//   console.log(counts[item.department] = counts[item.department] + 1 || 1);
-//   return counts;
-// })
+const result = data.employees.reduce((counts,item) => {
+  console.log(counts[item.department] = counts[item.department] + 1 || 1);
+  return counts;
+})
 
-// console.log(result)
+console.log(result)

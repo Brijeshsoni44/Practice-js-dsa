@@ -11,6 +11,10 @@ const data = {
     ]
   };
 
+
+  // const result = data.employees.filter((item) => item.department === 'Sales')
+  // console.log("resul",result)
+
 //   1. Filter employees with a salary greater than $50,000
 // Question:
 // Write a function to return an array of employees whose salary is greater than $50,000.
@@ -47,3 +51,7 @@ const data = {
 // Find employees whose salaries fall in the range of $45,000 to $55,000.
 // Answer:
 // Use filter() with a compound condition (salary >= 45000 && salary <= 55000).
+
+const result = data.employees.filter((item) => item.salary >= 45000 && item.salary <= 50000)
+console.log(result)
+

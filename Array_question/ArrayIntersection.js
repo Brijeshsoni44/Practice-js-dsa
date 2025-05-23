@@ -1,6 +1,36 @@
+// This function uses 3 nested loops:
+
+// Outer loop → goes through each element of arr1
+
+// Inner loop → compares current arr1[i] with each element of arr2
+
+// If match is found, third loop checks if it's already in result
+
+// If not already there → push it to result
+// Iteration steps:
+// i = 0 → arr1[0] = 1
+
+// Compare with arr2 → 2, 3, 4 → no match
+
+// i = 1 → arr1[1] = 2
+
+// Compare with arr2 → match with arr2[0] = 2
+
+// Not in result → add → result = [2]
+
+// i = 2 → arr1[2] = 3
+
+// Compare with arr2 → match with arr2[1] = 3
+
+// Not in result → add → result = [2, 3]
+
+// "I'll start with a nested loop approach — compare each element of the first array with the second, and if they match and aren’t already in my result array, I’ll add them. Then I can optimize it using a Set for faster lookup."
+
+// simple approch iterate over loop compare with two loopd and the remove duplicacy you will get the result
+
+
 function findIntersectionNaive(arr1, arr2) {
     let result = [];
-  
     for (let i = 0; i < arr1.length; i++) {
       for (let j = 0; j < arr2.length; j++) {
         if (arr1[i] === arr2[j]) {

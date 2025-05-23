@@ -32,6 +32,10 @@ function mergeSortedArrays(arr1, arr2){
 
 
 const arr1 = [1, 3, 5], arr2 = [2, 4, 6,23,21,12];
+const result = [...arr1, ...arr2]
+const result2 = result.sort((a,b) => a-b)
+console.log(result2)
+// console.log("result",result.sort(a,b) => a-b)
 console.log(mergeSortedArrays(arr1, arr2)); 
 
 
